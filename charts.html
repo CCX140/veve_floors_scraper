@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- head definitions go here -->
+        <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    </head>
+    <body>
+        <!-- the content goes here -->
+        <script type="text/javascript">
+        	const chart = LightweightCharts.createChart(document.body, { width: 1200, height: 780 });
+        	chart.applyOptions({
+	        	layout: {
+				backgroundColor: '#000000',
+				textColor: '#d1d4dc',
+				},
+				grid: {
+					vertLines: {
+						visible: false,
+					},
+					horzLines: {
+						color: 'rgba(42, 46, 57, 0.5)',
+					},
+				},
+				rightPriceScale: {
+					borderVisible: false,
+				},
+				timeScale: {
+					borderVisible: true,
+					timeVisible: true,
+					secondsVisible: false
+				},
+				crosshair: {
+					horzLine: {
+						visible: false,
+					},
+				}
+		});
+			const lineSeries = chart.addAreaSeries({
+			    topColor: 'rgba(76, 175, 80, 0.56)',
+			    bottomColor: 'rgba(76, 175, 80, 0.04)',
+			    lineColor: 'rgba(76, 175, 80, 1)',
+			    lineWidth: 2,
+			});
+			lineSeries.setData([
+				{time:1529884800,value:180},
+				{time:1529884860,value:181},
+				{time:1529884940,value:183},
+				{time:1529885000,value:188},
+				{time:1529885060,value:180},
+				{time:1529885120,value:182},
+				{time:1529885180,value:181}
+			]);
+        </script>
+    </body>
+</html>
